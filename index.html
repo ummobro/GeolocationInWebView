@@ -6,14 +6,31 @@
     
 </head>
 <body>
-<p style="margin-top:-12px">
-    <b>Chrome 브라우저는 https 환경에서만 geolocation을 지원합니다.</b> 참고해주세요.
-</p>
+<p id="demo">버튼을 클릭하면 당신의 위치를 출력합니다.</p>
+<button onclick="getLocation()">클릭</button>
+
 <div id="map" style="width:100%;height:350px;"></div>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=98f2b125972599309f90680f52127752
 "></script>
 <script>
+
+    var x = document.getElementById("demo");
+ 
+    function getLocation() {
+        //alert("getLocation");
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(showPosition);
+        }
+        else{
+            alert("위치를 얻을 수 없습니다.");
+        }
+    }
+    function showPosition(position) {
+        x.innerHTML = "위도:" + position.coords.latitude 
+                    + " 경도:" + position.coords.longitude;
+    }
+    
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = { 
         center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
