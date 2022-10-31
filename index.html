@@ -8,7 +8,7 @@
 <body>
 <p id="demo">버튼을 클릭하면 당신의 위치를 출력합니다.</p><button onclick="getLocation()">클릭</button>
 
-<div id="map" style="width:300%;height:500px;"></div>
+<div id="map" style="width:300%;height:1000px;"></div>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=98f2b125972599309f90680f52127752
 "></script>
@@ -32,7 +32,7 @@
     
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = { 
-        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+        center: new kakao.maps.LatLng(37.4873799, 126.8903678), // 지도의 중심좌표
         level: 10 // 지도의 확대 레벨 
     }; 
 
