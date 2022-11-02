@@ -18,14 +18,10 @@
  
     function getLocation() {
         //alert("getLocation");
-        if(navigator.geolocation){
+
             navigator.geolocation.getCurrentPosition(showPosition);
-        }
-        else{
-            alert("위치를 얻을 수 없습니다.");
-        }
-         JavaScriptChannel.postMessage(showPosition);
     }
+    
     function showPosition(position) {
         x.innerHTML = "위도:" + position.coords.latitude 
                     + " 경도:" + position.coords.longitude;
